@@ -284,7 +284,10 @@ h3 {
 
 
 <script type="text/javascript">
-var conn = new WebSocket('ws://localhost:8080');
+var ip = "<?php echo $_SERVER['SERVER_ADDR']; ?>";  
+var conn = new WebSocket('ws://'+ip+':8080');
+  
+// var conn = new WebSocket('ws://localhost:8080');
 
 conn.onopen = function(e) {
   console.log("Connection established!!");
